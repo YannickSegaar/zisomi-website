@@ -577,11 +577,11 @@ const PartnershipForm = () => {
 
         {/* Left column */}
         <div className="partnership-animate bg-dark rounded-3xl p-10 md:p-14 flex flex-col justify-center">
-          <span className="font-heading font-bold text-[10px] tracking-[0.3em] uppercase text-primary mb-4">Partnership</span>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-white leading-tight mb-6">
+          <span className="font-heading font-bold text-[10px] tracking-[0.3em] uppercase text-white/20 mb-4">Partnership</span>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-white/15 leading-tight mb-6">
             Grow With Europe's Most Innovative Luggage Brand
           </h2>
-          <p className="text-sand/70 font-sans leading-relaxed mb-8">
+          <p className="text-white/15 font-sans leading-relaxed mb-8">
             Join a select network of retail partners bringing the next generation of trackable luggage to travellers across Europe. We provide everything you need to succeed.
           </p>
           <ul className="space-y-4">
@@ -591,8 +591,8 @@ const PartnershipForm = () => {
               'Co-branded marketing materials & display units',
               'Exclusive territory agreements available'
             ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-sand/80 font-sans text-sm">
-                <CheckCircle2 size={18} className="text-primary shrink-0 mt-0.5" />
+              <li key={i} className="flex items-start gap-3 text-white/15 font-sans text-sm">
+                <CheckCircle2 size={18} className="text-white/20 shrink-0 mt-0.5" />
                 {item}
               </li>
             ))}
