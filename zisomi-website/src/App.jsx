@@ -19,7 +19,7 @@ const scrollToSection = (id) => {
 
 const Logo = () => (
   <div className="flex items-center gap-2 group cursor-pointer">
-    <img src="/assets/ZisomiLogo.jpeg" alt="Zisomi Logo" className="h-10 w-10 object-cover rounded-full" />
+    <img src={`${import.meta.env.BASE_URL}assets/ZisomiLogo.jpeg`} alt="Zisomi Logo" className="h-10 w-10 object-cover rounded-full" />
     <span className="font-heading font-bold text-2xl tracking-tight text-dark-text group-hover:text-primary transition-colors">
       Zisomi
     </span>
@@ -84,7 +84,7 @@ const Navbar = () => {
           <div className="flex items-center gap-12">
             <div className="flex items-center">
               <span className="sr-only">Zisomi</span>
-              <img src="/assets/ZisomiLogo.jpeg" alt="Zisomi" className="h-[28px] object-contain" />
+              <img src={`${import.meta.env.BASE_URL}assets/ZisomiLogo.jpeg`} alt="Zisomi" className="h-[28px] object-contain" />
             </div>
             <div className="hidden md:flex items-center gap-8 font-heading text-sm text-dark-text font-medium border-b border-transparent pb-1 tracking-[0.2em] uppercase">
               <a href="#product" onClick={(e) => { e.preventDefault(); scrollToSection('product'); }} className="hover:text-primary transition-colors inline-block tracking-widest">Product</a>
@@ -230,7 +230,7 @@ const Hero = () => {
              <div className="absolute inset-0 bg-sand/30 blur-3xl rounded-full scale-110"></div>
              <img
               ref={suitcaseRef}
-              src="/assets/20260121_Zisomi_Techpack_3-4_Front_CMF_Teal.png"
+              src={`${import.meta.env.BASE_URL}assets/20260121_Zisomi_Techpack_3-4_Front_CMF_Teal.png`}
               alt="Zisomi Teal Carry-on Suitcase"
               className="w-full h-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] relative z-10"
             />
@@ -291,10 +291,10 @@ const ValueBanner = () => {
 
 const Collection = () => {
   const products = [
-    { id: 1, name: 'Carry-on luggage', img: '/assets/20260121_Zisomi_Techpack_3-4_Front_CMF_Teal.png', color: 'Teal' },
-    { id: 2, name: 'Carry-on luggage', img: '/assets/20260121_Zisomi_Techpack_3-4_Front_CMF_Charcoal.png', color: 'Charcoal' },
-    { id: 3, name: 'Carry-on luggage', img: '/assets/20260121_Zisomi_Techpack_3-4_Front_CMF_Copper.png', color: 'Copper' },
-    { id: 4, name: 'Carry-on luggage', img: '/assets/20260121_Zisomi_Techpack_3-4_Front_CMF_Sand.png', color: 'Sand' }
+    { id: 1, name: 'Carry-on luggage', img: `${import.meta.env.BASE_URL}assets/20260121_Zisomi_Techpack_3-4_Front_CMF_Teal.png`, color: 'Teal' },
+    { id: 2, name: 'Carry-on luggage', img: `${import.meta.env.BASE_URL}assets/20260121_Zisomi_Techpack_3-4_Front_CMF_Charcoal.png`, color: 'Charcoal' },
+    { id: 3, name: 'Carry-on luggage', img: `${import.meta.env.BASE_URL}assets/20260121_Zisomi_Techpack_3-4_Front_CMF_Copper.png`, color: 'Copper' },
+    { id: 4, name: 'Carry-on luggage', img: `${import.meta.env.BASE_URL}assets/20260121_Zisomi_Techpack_3-4_Front_CMF_Sand.png`, color: 'Sand' }
   ];
 
   return (
