@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+body {
+  background-color: theme('colors.background');
+  color: theme('colors.dark-text');
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: theme('colors.background');
+}
+::-webkit-scrollbar-thumb {
+  background: theme('colors.dark');
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.primary');
+}
+
+.bg-breton-stripes {
+  background: repeating-linear-gradient(
+    0deg,
+    #CF331E,
+    #CF331E 20px,
+    #ffffff 20px,
+    #ffffff 40px
+  );
+}
+
+.bg-breton-stripes-offset {
+  background: repeating-linear-gradient(
+    0deg,
+    #ffffff,
+    #ffffff 20px,
+    #CF331E 20px,
+    #CF331E 40px
+  );
+}
