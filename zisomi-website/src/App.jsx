@@ -67,7 +67,7 @@ const MagneticButton = ({ children, className = '', onClick }) => {
 // --- Page Sections ---
 
 const TopUtilityBar = () => (
-  <div className="w-full bg-breton-stripes text-white py-2 px-6 flex justify-center items-center text-[10px] md:text-xs font-heading font-medium tracking-widest uppercase border-b border-dark/5 relative z-[60]">
+  <div className="fixed top-0 left-0 right-0 w-full bg-breton-stripes text-white py-2 px-6 flex justify-center items-center text-[10px] md:text-xs font-heading font-medium tracking-widest uppercase border-b border-dark/5 z-[60]">
     <div className="absolute inset-0 bg-dark/70 backdrop-blur-sm z-0"></div>
     <div className="relative z-10 text-center">
       Launching Q4 2026 — Retail Partnership Applications Now Open
