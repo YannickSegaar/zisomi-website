@@ -76,6 +76,13 @@ const TopUtilityBar = () => (
 );
 
 const Navbar = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleNavClick = (id) => {
+    setMobileOpen(false);
+    scrollToSection(id);
+  };
+
   return (
     <>
       <TopUtilityBar />
@@ -87,10 +94,10 @@ const Navbar = () => {
               <img src={`${import.meta.env.BASE_URL}assets/ZisomiLogo.jpeg`} alt="Zisomi" className="h-[28px] object-contain" />
             </div>
             <div className="hidden md:flex items-center gap-8 font-heading text-sm text-dark-text font-medium border-b border-transparent pb-1 tracking-[0.2em] uppercase">
-              <a href="#product" onClick={(e) => { e.preventDefault(); scrollToSection('product'); }} className="hover:text-primary transition-colors inline-block tracking-widest">Product</a>
-              <a href="#features" onClick={(e) => { e.preventDefault(); scrollToSection('features'); }} className="hover:text-primary transition-colors inline-block tracking-widest">Features</a>
-              <a href="#partnership" onClick={(e) => { e.preventDefault(); scrollToSection('partnership'); }} className="hover:text-primary transition-colors inline-block tracking-widest">Partnership</a>
-              <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="hover:text-primary transition-colors inline-block tracking-widest">Contact</a>
+              <a href="#product" onClick={(e) => { e.preventDefault(); handleNavClick('product'); }} className="hover:text-primary transition-colors inline-block tracking-widest">Product</a>
+              <a href="#features" onClick={(e) => { e.preventDefault(); handleNavClick('features'); }} className="hover:text-primary transition-colors inline-block tracking-widest">Features</a>
+              <a href="#partnership" onClick={(e) => { e.preventDefault(); handleNavClick('partnership'); }} className="hover:text-primary transition-colors inline-block tracking-widest">Partnership</a>
+              <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick('contact'); }} className="hover:text-primary transition-colors inline-block tracking-widest">Contact</a>
             </div>
           </div>
 
@@ -101,8 +108,34 @@ const Navbar = () => {
             >
               Become a Partner
             </button>
+            {/* Mobile hamburger */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="md:hidden flex flex-col gap-1.5 p-2"
+              aria-label="Toggle menu"
+            >
+              <span className={`block w-6 h-[2px] bg-dark-text transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-[5px]' : ''}`}></span>
+              <span className={`block w-6 h-[2px] bg-dark-text transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`block w-6 h-[2px] bg-dark-text transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-[5px]' : ''}`}></span>
+            </button>
           </div>
         </div>
+
+        {/* Mobile menu */}
+        {mobileOpen && (
+          <div className="md:hidden mt-4 pt-4 border-t border-dark/5 flex flex-col gap-4 font-heading text-sm text-dark-text font-medium tracking-[0.2em] uppercase">
+            <a href="#product" onClick={(e) => { e.preventDefault(); handleNavClick('product'); }} className="hover:text-primary transition-colors tracking-widest py-1">Product</a>
+            <a href="#features" onClick={(e) => { e.preventDefault(); handleNavClick('features'); }} className="hover:text-primary transition-colors tracking-widest py-1">Features</a>
+            <a href="#partnership" onClick={(e) => { e.preventDefault(); handleNavClick('partnership'); }} className="hover:text-primary transition-colors tracking-widest py-1">Partnership</a>
+            <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick('contact'); }} className="hover:text-primary transition-colors tracking-widest py-1">Contact</a>
+            <button
+              onClick={() => handleNavClick('partnership')}
+              className="inline-flex items-center justify-center gap-2 bg-primary text-white text-xs font-heading font-bold tracking-wider uppercase px-5 py-2.5 rounded-full hover:bg-dark transition-colors mt-1 mb-2"
+            >
+              Become a Partner
+            </button>
+          </div>
+        )}
       </nav>
     </>
   );
